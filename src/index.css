@@ -160,8 +160,9 @@ code {
 .cart-list {
   position: fixed;
   right: 10px;
+  bottom: 20px;
   top: 50px;
-  height: 90vh;
+  height: 86vh;
   background-color: white;
   width: 380px;
   border-left: 1px solid #e2e2e2;
@@ -176,10 +177,11 @@ code {
   justify-content: space-between;
   padding: 8px;
   background-color: #f2f2f2;
+  border-radius: 0.5rem;
 }
 
 .cart-list-items {
-  height: 78vh;
+  height: 70vh;
   padding: 10px;
   overflow-y: scroll;
 }
@@ -190,6 +192,12 @@ code {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.no-item-in-cart {
+  margin-top: 150px;
+  color: #ff0000;
+  text-align: center;
 }
 
 /*Cart count*/
@@ -242,6 +250,6 @@ a {
   cursor: pointer;
 }
 
-.item-count{
+.item-count {
   color: #000;
 }

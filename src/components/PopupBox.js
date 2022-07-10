@@ -6,7 +6,7 @@ export default function PopupBox({ selectedProduct }) {
   useEffect(() => {
     console.log(selectedProduct);
   }, []);
-  
+
   const removeItem = () => {
     selectedProduct = {};
   };
@@ -14,7 +14,6 @@ export default function PopupBox({ selectedProduct }) {
     <div>
       <div id="popup1" className="overlay">
         <div className="popup">
-          <h1>Selected Product</h1>
           <a className="close" href="#" onClick={removeItem}>
             &times;
           </a>
@@ -29,7 +28,7 @@ export default function PopupBox({ selectedProduct }) {
                         {selectedProduct.title}
                       </p>
                       <img
-                        className="prodImg"
+                        className="popUp-prod-Img"
                         src={selectedProduct.image}
                         alt={`${"image" + selectedProduct.id}`}
                       />

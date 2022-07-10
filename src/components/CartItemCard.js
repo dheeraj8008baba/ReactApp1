@@ -7,7 +7,7 @@ export default function CartItemCard({ cartItem }) {
     <div className="cartItemList">
       <p>{cartItem.title}</p>
       <div className="cartItemCard">
-        <img className="cartItemImg" src={cartItem.image} />
+        <img className="cartItemImg" src={cartItem.image} alt="cartItemImg" />
         <div className="inc-dec-block">
           <IncrementDecrementBtn cartItem={cartItem} />
         </div>

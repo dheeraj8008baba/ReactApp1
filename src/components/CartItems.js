@@ -6,33 +6,42 @@ export default function CartItems() {
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const { isCartOpen, setIsCartOpen, items, totalCartPrice } = useCartContext();
   useEffect(() => {
-    if (totalCartPrice == 0) {
+    if (totalCartPrice === 0) {
       setIsBtnDisabled(true);
       setIsCartOpen(false);
     } else {
       setIsBtnDisabled(false);
     }
-  }, [totalCartPrice]);
+  }, [setIsBtnDisabled, setIsCartOpen, totalCartPrice]);
   if (isCartOpen) {
     return (
       <div className="cart-list">
         <div className="cart-list-header">
-          <span>Cart</span>
+          <span>Cart Items</span>
           <button onClick={() => setIsCartOpen(false)}>x</button>
         </div>
-        <div className="cart-list-items">
-          {Object.keys(items).map((key) => {
-            return <CartItemCard cartItem={items[key]} />;
-          })}
-        </div>
-        <div className="cart-list-footer">
-          <span>Total Price: ${totalCartPrice.toFixed(2)}</span>
-          <button className="checkout-btn" disabled={isBtnDisabled}>
-            Checkout
-          </button>
-        </div>
+        {Object.keys(items).length ? (
+          <div>
+            <div className="cart-list-items">
+              {Object.keys(items).map((key) => {
+                return <CartItemCard cartItem={items[key]} />;
+              })}
+            </div>
+            <div className="cart-list-footer">
+              <span>Total Price: ${totalCartPrice.toFixed(2)}</span>
+              <button className="checkout-btn" disabled={isBtnDisabled}>
+                Checkout
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="no-item-in-cart">No Item Found in Your Cart.</div>
+        )}
       </div>
     );
+    // } else {
+    //   return <h3>No Item found in cart</h3>;
+    // }
   } else {
     return null;
   }

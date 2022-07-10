@@ -6,26 +6,18 @@ import ProductCard from "./ProductCard";
 import PopupBox from "./PopupBox";
 import { useProductContext } from "../context/ProductContext";
 import CartItems from "./CartItems";
+import { useCartContext } from "../context/CartContext";
 
 export default function Products() {
   const { isLoadingData, data, loadError } = useProductContext();
+  const { setIsCartOpen } = useCartContext();
   const [selectedProduct, setSelectedProduct] = useState({});
 
-  const [cartCount, setCartCount] = useState(0);
-  const cartItems = useRef([]);
-
+  const cartCount = useRef(0);
   const onSelectItem = (product) => {
     setSelectedProduct(product);
+    setIsCartOpen(false);
   };
-
-  // const addCartItems = async (item) => {
-  //   cartItems.current.push(item);
-  //   addToCart();
-  // };
-
-  // const addToCart = () => {
-  //   setCartCount(cartItems.current.length);
-  // };
 
   return (
     <div className="my-products">

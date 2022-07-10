@@ -1,5 +1,4 @@
 import React from "react";
-import AddToCart from "./AddToCart";
 
 export default function ProductCard({ product }) {
   return (
@@ -15,8 +14,9 @@ export default function ProductCard({ product }) {
           Ratings: {product.rating.rate} Count: {product.rating.count}
         </p>
         <div className="product-footer">
-          <div className="product-price">Price: ${product.price.toFixed(2)}</div>
-          {/* <AddToCart product={product} /> */}
+          <div className="product-price">
+            Price: ${product.price.toFixed(2)}
+          </div>
         </div>
       </div>
     </div>
