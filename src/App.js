@@ -1,11 +1,20 @@
-import './App.css';
-import Products from './components/Products';
+import "./App.css";
+import Products from "./components/Products";
+import CartProvider from "./context/CartContext";
+import CategoryProvider from "./context/CategoryContext";
+import ProductProvider from "./context/ProductContext";
 
 function App() {
   return (
-    <div className="App">
-      <Products/>
-    </div>
+    <CartProvider>
+      <CategoryProvider>
+        <div className="App">
+          <ProductProvider>
+            <Products />
+          </ProductProvider>
+        </div>
+      </CategoryProvider>
+    </CartProvider>
   );
 }
 
