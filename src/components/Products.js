@@ -31,10 +31,9 @@ export default function Products() {
           ) : (
             <div className="products">
               {data.map((product, i) => (
-                <div className="product-container">
+                <div className="product-container" key={`${product.id}_${i}`}>
                   <a
                     href="#popup1"
-                    key={`${product.id}_${i}`}
                     onClick={() => onSelectItem(product)}
                   >
                     <ProductCard href="#popup1" product={product} />

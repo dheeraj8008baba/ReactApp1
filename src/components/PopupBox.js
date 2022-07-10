@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import AddToCart from "./AddToCart";
 import "./PopupBox.css";
 
 export default function PopupBox({ selectedProduct }) {
-  useEffect(() => {
-    console.log(selectedProduct);
-  }, []);
-
   const removeItem = () => {
     selectedProduct = {};
   };

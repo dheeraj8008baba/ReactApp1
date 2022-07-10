@@ -24,7 +24,7 @@ export default function CartItems() {
           <div>
             <div className="cart-list-items">
               {Object.keys(items).map((key) => {
-                return <CartItemCard cartItem={items[key]} />;
+                return <CartItemCard cartItem={items[key]} key={key} />;
               })}
             </div>
             <div className="cart-list-footer">
